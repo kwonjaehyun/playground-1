@@ -1391,7 +1391,7 @@ class mainCog(commands.Cog):
 	################ 보탐봇 메뉴 출력 ################ 	
 	@commands.command(name=command[1][0], aliases=command[1][1:])
 	async def menu_(self, ctx):
-		if ctx.message.channel.id == basicSetting[7]:
+		if :
 			command_list = ''
 			command_list += ','.join(command[2]) + '\n'     #!설정확인
 			command_list += ','.join(command[3]) + '\n'     #!채널확인
@@ -1457,7 +1457,7 @@ class mainCog(commands.Cog):
 	@commands.command(name=command[2][0], aliases=command[2][1:])
 	async def setting_(self, ctx):	
 		#print (ctx.message.channel.id)
-		if ctx.message.channel.id == basicSetting[7]:
+		if :
 			setting_val = '보탐봇버전 : Server Ver. 27 (2021. 2. 17.)\n'
 			if basicSetting[6] != "" :
 				setting_val += '음성채널 : ' + self.bot.get_channel(basicSetting[6]).name + '\n'
@@ -1496,7 +1496,7 @@ class mainCog(commands.Cog):
 	################ 서버 채널 확인 ################ 
 	@commands.command(name=command[3][0], aliases=command[3][1:])
 	async def chChk_(self, ctx):
-		if ctx.message.channel.id == basicSetting[7]:
+		if :
 			channel_name, channel_id, channel_voice_name, channel_voice_id = await get_guild_channel_info(self.bot)
 
 			ch_information = []
@@ -1580,7 +1580,7 @@ class mainCog(commands.Cog):
 	@commands.command(name=command[4][0], aliases=command[4][1:])
 	async def chMove_(self, ctx):
 		global basicSetting
-		if ctx.message.channel.id == basicSetting[7]:
+		if :
 			msg = ctx.message.content[len(ctx.invoked_with)+1:]
 			channel = None
 			for i in range(len(channel_name)):
@@ -1613,7 +1613,7 @@ class mainCog(commands.Cog):
 	async def connectVoice_(self, ctx):
 		global basicSetting
 
-		if ctx.message.channel.id == basicSetting[7]:
+		if :
 			if basicSetting[21] != "1":
 				return await ctx.send('```보이스를 사용하지 않도록 설정되어 있습니다.```', tts=False)
 
@@ -1678,7 +1678,7 @@ class mainCog(commands.Cog):
 	################ my_bot.db에 저장된 보스타임 불러오기 ################
 	@commands.command(name=command[6][0], aliases=command[6][1:])
 	async def loadDB_(self, ctx):
-		if ctx.message.channel.id == basicSetting[7]:
+		if :
 			await dbLoad()
 
 			if LoadChk == 0:
@@ -1714,7 +1714,7 @@ class mainCog(commands.Cog):
 		global FixedBossDateData
 		global indexFixedBossname
 			
-		if ctx.message.channel.id == basicSetting[7]:
+		if :
 			basicSetting = []
 			bossData = []
 			fixed_bossData = []
@@ -1754,7 +1754,7 @@ class mainCog(commands.Cog):
 		global bossTimeString
 		global bossDateString
 
-		if ctx.message.channel.id == basicSetting[7]:
+		if :
 			if basicSetting[2] != '0' and basicSetting[22] != '0':
 				for i in range(bossNum):
 					if bossMungFlag[i] == True:
@@ -1787,7 +1787,7 @@ class mainCog(commands.Cog):
 	################ 미예약 보스타임 출력 ################ 
 	@commands.command(name=command[10][0], aliases=command[10][1:])
 	async def nocheckBoss_(self, ctx):
-		if ctx.message.channel.id == basicSetting[7]:
+		if :
 			tmp_boss_information = []
 			tmp_cnt = 0
 			tmp_boss_information.append('')
@@ -1847,7 +1847,7 @@ class mainCog(commands.Cog):
 	################ 분배 결과 출력 ################ 
 	@commands.command(name=command[11][0], aliases=command[11][1:])
 	async def bunbae_(self, ctx):
-		if ctx.message.channel.id == basicSetting[7]:
+		if :
 			msg = ctx.message.content[len(ctx.invoked_with)+1:]
 			separate_money = []
 			separate_money = msg.split(" ")
@@ -1871,10 +1871,10 @@ class mainCog(commands.Cog):
 	################ 사다리 결과 출력 ################ 
 	@commands.command(name=command[12][0], aliases=command[12][1:])
 	async def ladder_(self, ctx : commands.Context, *, args : str = None):
-		if basicSetting[8] != "" and ctx.message.channel.id == basicSetting[7]:
+		if basicSetting[8] != "" and :
 			return
 
-		if ctx.message.channel.id == basicSetting[7] or ctx.message.channel.id == basicSetting[8]:
+		if  or ctx.message.channel.id == basicSetting[8]:
 			if not args:
 				return await ctx.send(f'```명령어 [인원] [아이디1] [아이디2] ... 형태로 입력해주시기 바랍나다.```')
 
@@ -1973,10 +1973,10 @@ class mainCog(commands.Cog):
 	################ 정산확인 ################ 
 	@commands.command(name=command[13][0], aliases=command[13][1:])
 	async def jungsan_(self, ctx):
-		if basicSetting[11] != "" and ctx.message.channel.id == basicSetting[7]:
+		if basicSetting[11] != "" and :
 			return
 
-		if ctx.message.channel.id == basicSetting[7] or ctx.message.channel.id == basicSetting[11]:
+		if  or ctx.message.channel.id == basicSetting[11]:
 			msg = ctx.message.content[len(ctx.invoked_with)+1:]
 			if basicSetting[10] !="" and basicSetting[12] !="" and basicSetting[14] !="" and basicSetting[15] !="" and basicSetting[16] !=""  :
 				SearchID = msg
@@ -2017,7 +2017,7 @@ class mainCog(commands.Cog):
 		global bossMungFlag
 		global bossMungCnt
 		
-		if ctx.message.channel.id == basicSetting[7]:
+		if :
 			msg = ctx.message.content[len(ctx.invoked_with)+1:]
 			for i in range(bossNum):
 				if bossTimeString[i] == '99:99:99':
@@ -2094,7 +2094,7 @@ class mainCog(commands.Cog):
 		global bossMungFlag
 		global bossMungCnt
 		
-		if ctx.message.channel.id == basicSetting[7]:
+		if :
 			msg = ctx.message.content[len(ctx.invoked_with)+1:]
 			for i in range(bossNum):
 				if bossData[i][2] == "1" and bossTimeString[i] == '99:99:99':
@@ -2152,7 +2152,7 @@ class mainCog(commands.Cog):
 	################ 가장 근접한 보스타임 출력 ################ 
 	@commands.command(name=command[15][0], aliases=command[15][1:])
 	async def nearTimeBoss_(self, ctx):
-		if ctx.message.channel.id == basicSetting[7]:
+		if :
 			checkTime = datetime.datetime.now() + datetime.timedelta(days=1, hours = int(basicSetting[0]))
 			
 			datelist = []
@@ -2230,7 +2230,7 @@ class mainCog(commands.Cog):
 	################ 음성파일 생성 후 재생 ################ 			
 	@commands.command(name=command[16][0], aliases=command[16][1:])
 	async def playText_(self, ctx):
-		if ctx.message.channel.id == basicSetting[7]:
+		if :
 			if basicSetting[21] != "1":
 				return await ctx.send('```보이스를 사용하지 않도록 설정되어 있습니다.```', tts=False)
 
@@ -2256,7 +2256,7 @@ class mainCog(commands.Cog):
 	################ 리젠시간 출력 ################
 	@commands.command(name=command[17][0], aliases=command[17][1:])
 	async def regenTime_(self, ctx):
-		if ctx.message.channel.id == basicSetting[7]:
+		if :
 			await ctx.send(embed=regenembed, tts=False)
 		else:
 			return
@@ -2264,7 +2264,7 @@ class mainCog(commands.Cog):
 	################ 현재시간 확인 ################ 
 	@commands.command(name=command[18][0], aliases=command[18][1:])
 	async def currentTime_(self, ctx):
-		if ctx.message.channel.id == basicSetting[7]:
+		if :
 			curruntTime = datetime.datetime.now() + datetime.timedelta(hours = int(basicSetting[0]))
 			embed = discord.Embed(
 				title = '현재시간은 ' + curruntTime.strftime('%H') + '시 ' + curruntTime.strftime('%M') + '분 ' + curruntTime.strftime('%S')+ '초 입니다.',
@@ -2277,7 +2277,7 @@ class mainCog(commands.Cog):
 	################ 공지 등록/확인 ################ 
 	@commands.command(name=command[19][0], aliases=command[19][1:])
 	async def notice_(self, ctx):
-		if ctx.message.channel.id == basicSetting[7]:
+		if :
 			msg = ctx.message.content.split(" ")
 			if len(msg) > 1:
 				sayMessage = " ".join(msg[1:])
@@ -2305,7 +2305,7 @@ class mainCog(commands.Cog):
 	################ 공지 삭제 ################ 
 	@commands.command(name=command[20][0], aliases=command[20][1:])
 	async def noticeDel_(self, ctx):
-		if ctx.message.channel.id == basicSetting[7]:
+		if :
 			contents = repo.get_contents("notice.ini")
 			repo.update_file(contents.path, "notice 삭제", '', contents.sha)
 			await ctx.send( '< 공지 삭제완료 >', tts=False)
@@ -2315,7 +2315,7 @@ class mainCog(commands.Cog):
 	################ 봇 상태메세지 변경 ################ 
 	@commands.command(name=command[21][0], aliases=command[21][1:])
 	async def botStatus_(self, ctx):
-		if ctx.message.channel.id == basicSetting[7]:
+		if :
 			msg = ctx.message.content[len(ctx.invoked_with)+1:]
 			sayMessage = msg
 			await self.bot.change_presence(status=discord.Status.online, activity=discord.Game(name=sayMessage, type=1), afk = False)
@@ -2326,7 +2326,7 @@ class mainCog(commands.Cog):
 	################ 보스타임 출력 ################ 
 	@commands.command(name=command[22][0], aliases=command[22][1:])
 	async def bossTime_(self, ctx):
-		if ctx.message.channel.id == basicSetting[7]:
+		if :
 			datelist = []
 			datelist2 = []
 			ouput_bossData = []
@@ -2515,7 +2515,7 @@ class mainCog(commands.Cog):
 	################ 보스타임 출력(고정보스포함) ################ 
 	@commands.command(name=command[23][0], aliases=command[23][1:])
 	async def bossTime_fixed_(self, ctx):
-		if ctx.message.channel.id == basicSetting[7]:
+		if :
 			datelist = []
 			datelist2 = []
 			ouput_bossData = []
@@ -2700,10 +2700,10 @@ class mainCog(commands.Cog):
 	################ 킬초기화 ################ 
 	@commands.command(name=command[24][0], aliases=command[24][1:])
 	async def killInit_(self, ctx):
-		if basicSetting[18] != "" and ctx.message.channel.id == basicSetting[7]:
+		if basicSetting[18] != "" and :
 			return
 
-		if ctx.message.channel.id == basicSetting[7] or ctx.message.channel.id == basicSetting[18]:
+		if  or ctx.message.channel.id == basicSetting[18]:
 			global kill_Data
 
 			kill_Data = {}
@@ -2716,10 +2716,10 @@ class mainCog(commands.Cog):
 	################ 킬명단 확인 및 추가################ 
 	@commands.command(name=command[25][0], aliases=command[25][1:]) 
 	async def killList_(self, ctx, *, args : str = None):
-		if basicSetting[18] != "" and ctx.message.channel.id == basicSetting[7]:
+		if basicSetting[18] != "" and :
 			return
 
-		if ctx.message.channel.id == basicSetting[7] or ctx.message.channel.id == basicSetting[18]:
+		if  or ctx.message.channel.id == basicSetting[18]:
 			global kill_Data
 
 			if not args:
@@ -2755,10 +2755,10 @@ class mainCog(commands.Cog):
 	################ 킬삭제 ################ 
 	@commands.command(name=command[26][0], aliases=command[26][1:])
 	async def killDel_(self, ctx, *, args : str = None):
-		if basicSetting[18] != "" and ctx.message.channel.id == basicSetting[7]:
+		if basicSetting[18] != "" and :
 			return
 
-		if ctx.message.channel.id == basicSetting[7] or ctx.message.channel.id == basicSetting[18]:
+		if  or ctx.message.channel.id == basicSetting[18]:
 			global kill_Data
 			
 			if not args:
@@ -2775,10 +2775,10 @@ class mainCog(commands.Cog):
 	################ 킬 차감 ################ 
 	@commands.command(name=command[33][0], aliases=command[33][1:]) 
 	async def killSubtract_(self, ctx, *, args : str = None):
-		if basicSetting[18] != "" and ctx.message.channel.id == basicSetting[7]:
+		if basicSetting[18] != "" and :
 			return
 
-		if ctx.message.channel.id == basicSetting[7] or ctx.message.channel.id == basicSetting[18]:
+		if  or ctx.message.channel.id == basicSetting[18]:
 			global kill_Data
 
 			if not args:
@@ -2821,10 +2821,10 @@ class mainCog(commands.Cog):
 	################ 경주 ################ 
 	@commands.command(name=command[27][0], aliases=command[27][1:])
 	async def race_(self, ctx):
-		if basicSetting[19] != "" and ctx.message.channel.id == basicSetting[7]:
+		if basicSetting[19] != "" and :
 			return
 
-		if ctx.message.channel.id == basicSetting[7] or ctx.message.channel.id == basicSetting[19]:
+		if  or ctx.message.channel.id == basicSetting[19]:
 			msg = ctx.message.content[len(ctx.invoked_with)+1:]
 			race_info = []
 			fr = []
@@ -3163,10 +3163,10 @@ class mainCog(commands.Cog):
 	################ 아이템초기화 확인 ################ 
 	@commands.command(name=command[29][0], aliases=command[29][1:])
 	async def itemInit_(self, ctx):
-		if basicSetting[20] != "" and ctx.message.channel.id == basicSetting[7]:
+		if basicSetting[20] != "" and :
 			return
 
-		if ctx.message.channel.id == basicSetting[7] or ctx.message.channel.id == basicSetting[20]:
+		if  or ctx.message.channel.id == basicSetting[20]:
 			global item_Data
 
 			item_Data = {}
@@ -3179,10 +3179,10 @@ class mainCog(commands.Cog):
 	################ 아이템 목록 확인 및 추가 ################ 
 	@commands.command(name=command[30][0], aliases=command[30][1:]) 
 	async def itemList_(self, ctx, *, args : str = None):
-		if basicSetting[20] != "" and ctx.message.channel.id == basicSetting[7]:
+		if basicSetting[20] != "" and :
 			return
 
-		if ctx.message.channel.id == basicSetting[7] or ctx.message.channel.id == basicSetting[20]:
+		if  or ctx.message.channel.id == basicSetting[20]:
 			global item_Data
 			
 			if not args:
@@ -3251,10 +3251,10 @@ class mainCog(commands.Cog):
 	################ 아이템 삭제 ################ 
 	@commands.command(name=command[31][0], aliases=command[31][1:])
 	async def itemDel_(self, ctx, *, args : str = None):
-		if basicSetting[20] != "" and ctx.message.channel.id == basicSetting[7]:
+		if basicSetting[20] != "" and :
 			return
 
-		if ctx.message.channel.id == basicSetting[7] or ctx.message.channel.id == basicSetting[20]:
+		if  or ctx.message.channel.id == basicSetting[20]:
 			global item_Data
 
 			if not args:
@@ -3275,10 +3275,10 @@ class mainCog(commands.Cog):
 	################ 아이템 차감 ################ 
 	@commands.command(name=command[32][0], aliases=command[32][1:]) 
 	async def itemSubtract_(self, ctx, *, args : str = None):
-		if basicSetting[20] != "" and ctx.message.channel.id == basicSetting[7]:
+		if basicSetting[20] != "" and :
 			return
 
-		if ctx.message.channel.id == basicSetting[7] or ctx.message.channel.id == basicSetting[20]:
+		if  or ctx.message.channel.id == basicSetting[20]:
 			global item_Data
 
 			if not args:
@@ -3322,7 +3322,7 @@ class mainCog(commands.Cog):
 	@commands.has_permissions(manage_messages=True)
 	@commands.command(name=command[34][0], aliases=command[34][1:])
 	async def leaveGuild_(self, ctx):
-		if ctx.message.channel.id == basicSetting[7]:
+		if :
 			guild_list : str = ""
 			guild_name : str = ""
 
@@ -3352,10 +3352,10 @@ class mainCog(commands.Cog):
 	################ 수수료 계산기 ################ 
 	@commands.command(name=command[35][0], aliases=command[35][1:])
 	async def tax_check(self, ctx, *, args : str = None):
-		if basicSetting[20] != "" and ctx.message.channel.id == basicSetting[7]:
+		if basicSetting[20] != "" and :
 			return
 
-		if ctx.message.channel.id == basicSetting[7] or ctx.message.channel.id == basicSetting[20]:
+		if  or ctx.message.channel.id == basicSetting[20]:
 			if not args:
 				return await ctx.send(f"**{command[35][0]} [판매금액] (거래소세금)** 양식으로 입력 해주세요\n※ 거래소세금은 미입력시 5%입니다.")
 			
@@ -3394,10 +3394,10 @@ class mainCog(commands.Cog):
 	################ 페이백 계산기 ################ 
 	@commands.command(name=command[36][0], aliases=command[36][1:])
 	async def payback_check(self, ctx, *, args : str = None):
-		if basicSetting[20] != "" and ctx.message.channel.id == basicSetting[7]:
+		if basicSetting[20] != "" and :
 			return
 
-		if ctx.message.channel.id == basicSetting[7] or ctx.message.channel.id == basicSetting[20]:
+		if  or ctx.message.channel.id == basicSetting[20]:
 			if not args:
 				return await ctx.send(f"**{command[36][0]} [거래소가격] [실거래가] (거래소세금)** 양식으로 입력 해주세요\n※ 거래소세금은 미입력시 5%입니다.")
 			
@@ -3445,7 +3445,7 @@ class mainCog(commands.Cog):
 
 	@commands.command(name=command[37][0], aliases=command[37][1:])
 	async def command_rock_paper_scissors_game(self, ctx : commands.Context):
-		if basicSetting[19] != "" and ctx.message.channel.id == basicSetting[7]:
+		if basicSetting[19] != "" and :
 			return
 
 		if ctx.message.channel.id != basicSetting[7] and ctx.message.channel.id != basicSetting[19]:
@@ -3546,7 +3546,7 @@ class mainCog(commands.Cog):
 	################ 럭키박스 ################ 
 	@commands.command(name=command[41][0], aliases=command[41][1:])
 	async def command_randombox_game(self, ctx : commands.Context, *, args : str = None):
-		if basicSetting[19] != "" and ctx.message.channel.id == basicSetting[7]:
+		if basicSetting[19] != "" and :
 			return
 
 		if ctx.message.channel.id != basicSetting[7] and ctx.message.channel.id != basicSetting[19]:
@@ -3831,7 +3831,7 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 		id = msg.author.id #id라는 변수에는 메시지를 보낸사람의 ID를 담습니다.
 		
 		if chflg == 1 :
-			if self.get_channel(basicSetting[7]).id == msg.channel.id:
+			if:
 				channel = basicSetting[7]
 				message = msg
 
